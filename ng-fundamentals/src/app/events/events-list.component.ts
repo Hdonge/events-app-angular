@@ -12,7 +12,10 @@ import { Component } from '@angular/core';
         <event-thumbnail #thumbnail [event]="event1"></event-thumbnail>
         <button class="btn btn-primary" (click)="thumbnail.logFoo()">Click me!</button>
     </div>
-    `
+    `,
+    styles:[`
+        .well div {color: red; }
+    `]
 
 })
 export class EventsListComponent {
