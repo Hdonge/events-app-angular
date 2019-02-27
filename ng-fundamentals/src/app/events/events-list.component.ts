@@ -6,10 +6,10 @@ import { Component } from '@angular/core';
     <div>
     <h1>Upcoming Angular Events</h1>
     <hr />
-        <event-thumbnail [event]="event1"></event-thumbnail>
+        <event-thumbnail (eventClick)="handleEventClicked($event)" [event]="event1"></event-thumbnail>
     </div>
     `
-    
+
 })
 export class EventsListComponent {
     event1 = {
@@ -19,5 +19,9 @@ export class EventsListComponent {
         time: '10:00 am',
         price: 599,
         imageUrl: '/assets/images/angularconnect-shield.png'
+    }
+
+    handleEventClicked(data) {
+        console.log("Received:", data);
     }
 }
